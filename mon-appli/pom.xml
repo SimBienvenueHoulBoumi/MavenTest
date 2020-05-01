@@ -26,6 +26,33 @@
   </dependencies>
   
   <build>
+    <!-- Changer le repertoire de sortie -->
     <directory>${project.basedir}/output</directory>
+    
+    <!-- Gestiondes plugins (versions) -->
+    <pluginManagement>
+        <plugins>
+            <!-- Plugin responsable de la generation du fichier JAR -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+            </plugin>
+        </plugins>
+    </pluginManagement>
+    <plugins>
+       <plugin>
+           <groupId>org.apache.maven.plugins</groupId>
+           <artifactId>maven-jar-plugin</artifactId>
+           <configuration>
+               <archive>
+                   <!-- Creation du manifest pour la definition de la classe Main -->
+                   <manifest>
+                       <mainClass>com.exemple.demo.App</mainClass>
+                   </manifest>
+               </archive>
+           </configuration>
+       </plugin>
+    </plugins>
   </build>
 </project>
