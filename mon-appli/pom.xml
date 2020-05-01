@@ -64,6 +64,9 @@
       <!-- Profil pour l'environnement de test -->
       <profile>
           <id>test</id>
+          <activation>
+          <activeByDefault>true</activeByDefault>
+      </activation>
           <build>
               <resources>
                   <resource>
@@ -86,6 +89,7 @@
               </resources>
           </build>
       </profile>
+      
   </profiles>
   
 </project>
